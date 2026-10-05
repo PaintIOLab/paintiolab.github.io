@@ -3,116 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paint.io — Support</title>
-<meta name="description" content="Help and contact for Paint.io, the paint-your-territory game for iPhone.">
-<link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+<meta name="color-scheme" content="light dark">
+<title>Paint.io</title>
+<meta name="description" content="Paint.io is a territory game for iPhone and Android. Draw loops, paint your territory and outsmart your rivals.">
 <style>
   :root {
-    --canvas: #f7f0e3; --card: #fffaf1; --ink: #2b2320; --muted: #6b5d52;
-    --wood: #8a5a34; --wood-dark: #6a4225;
-    --red: #e8453c; --blue: #2f7de1; --yellow: #f5b82e; --green: #3fae5a;
+    --bg: #f3f8ff;
+    --card: #ffffff;
+    --ink: #1c2748;
+    --muted: #55608a;
+    --brand: #2f7ff0;
+    --brand-deep: #1b4fb0;
+    --line: #d9e4f7;
+    --hero-top: #38a2ff;
+    --hero-bottom: #1b60d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1730;
+      --card: #16213f;
+      --ink: #eaf0ff;
+      --muted: #a9b6dc;
+      --brand: #6aa6ff;
+      --brand-deep: #8fbbff;
+      --line: #2a3a66;
+      --hero-top: #1f5fc4;
+      --hero-bottom: #0f2f73;
+    }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: var(--wood);
-    font: 17px/1.55 ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif;
+    margin: 0;
+    background: var(--bg);
     color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  .frame {
-    max-width: 760px; margin: 24px auto; padding: 14px;
-    background: linear-gradient(135deg, var(--wood) 0%, var(--wood-dark) 100%);
-    border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  .hero {
+    background: linear-gradient(180deg, var(--hero-top), var(--hero-bottom));
+    color: #fff;
+    text-align: center;
+    padding: 64px 16px 72px;
   }
-  .canvas {
-    background: var(--canvas); border-radius: 8px; padding: 36px 32px 28px;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(120,90,60,.05) 0 1px, transparent 1px 4px),
-      repeating-linear-gradient(90deg, rgba(120,90,60,.05) 0 1px, transparent 1px 4px);
+  .logo {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 18px;
+    font-size: 0;
   }
-  header { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
-  header img { width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 3px 8px rgba(0,0,0,.25); }
-  h1 { font-size: 2.2rem; margin: 0; letter-spacing: .5px; }
-  .tag { margin: 2px 0 0; color: var(--muted); }
-  .stripe { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 22px 0 26px; }
-  .stripe span { flex: 1; }
-  h2 { font-size: 1.25rem; margin: 28px 0 6px; }
-  .card { background: var(--card); border-radius: 12px; padding: 4px 20px 14px; margin: 14px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-  .contact { background: var(--ink); color: #fff; border-radius: 12px; padding: 18px 20px; margin-top: 28px; }
-  .contact a { color: var(--yellow); font-weight: 700; }
-  a { color: var(--blue); }
-  footer { margin-top: 26px; font-size: .9rem; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
-  @media (max-width: 520px) {
-    .frame { margin: 0; border-radius: 0; padding: 10px; }
-    .canvas { padding: 24px 18px 20px; }
-    h1 { font-size: 1.8rem; }
-    header img { width: 64px; height: 64px; border-radius: 15px; }
+  .tile {
+    display: inline-block;
+    width: 62px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 12px;
+    background: #fffdf7;
+    box-shadow: 0 5px 0 rgba(10, 40, 110, 0.35);
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  }
+  .tile:nth-child(1) { color: #0a7cf0; transform: rotate(-3deg); }
+  .tile:nth-child(2) { color: #ff5e52; transform: rotate(2deg); }
+  .tile:nth-child(3) { color: #ffb400; transform: rotate(-2deg); }
+  .tile:nth-child(4) { color: #00b98a; transform: rotate(3deg); }
+  .tile:nth-child(5) { color: #8a5cf0; transform: rotate(-2deg); }
+  .tile.dot { width: 34px; color: #1c2748; }
+  .tile:nth-child(7) { color: #ff4fa3; transform: rotate(2deg); }
+  .tile:nth-child(8) { color: #ff8a1c; transform: rotate(-3deg); }
+  .hero h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tagline {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 16px 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 22px 24px;
+    margin-bottom: 18px;
+  }
+  h2 { font-size: 22px; line-height: 1.3; margin: 0 0 8px; color: var(--brand-deep); }
+  p { margin: 8px 0; }
+  ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--brand); }
+  .btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  @media (prefers-color-scheme: dark) { .btn { color: #0e1730; } }
+  .btn:hover { filter: brightness(1.08); }
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4px 16px 44px;
+    color: var(--muted);
+    font-size: 15px;
+    text-align: center;
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 48px 12px 56px; }
+    .tile { width: 48px; height: 56px; line-height: 56px; font-size: 32px; }
+    .tile.dot { width: 26px; }
+    .tagline { font-size: 18px; }
+    .card { padding: 18px 16px 20px; }
   }
 </style>
 </head>
 <body>
-<div class="frame"><main class="canvas">
-  <header>
-    <img src="icon.png" alt="Paint.io app icon">
-    <div>
-      <h1>Paint.io</h1>
-      <p class="tag">Paint the board. Loop back home. Don't get splatted.</p>
-    </div>
-  </header>
-  <div class="stripe"><span style="background:var(--red)"></span><span style="background:var(--yellow)"></span><span style="background:var(--green)"></span><span style="background:var(--blue)"></span></div>
-
-  <p>Need a hand? Here are answers to common questions. If yours isn't here, write to us and we'll get back to you.</p>
-
-  <div class="card">
-    <h2>How is my progress saved?</h2>
-    <p>Your coins, equipment and stats are saved on your iPhone. If you're signed in to iCloud, they're also kept in your own iCloud account, so they come back if you reinstall the game or move to a new iPhone signed in to the same Apple Account.</p>
+<section class="hero">
+  <h1>Paint.io</h1>
+  <div class="logo" aria-hidden="true">
+    <span class="tile">P</span><span class="tile">A</span><span class="tile">I</span><span class="tile">N</span><span class="tile">T</span><span class="tile dot">.</span><span class="tile">I</span><span class="tile">O</span>
   </div>
+  <p class="tagline">A territory game for iPhone and Android. Draw loops, paint your territory and outsmart your rivals.</p>
+</section>
 
-  <div class="card">
-    <h2>Do I need an account?</h2>
-    <p>No. You can play straight away. Signing in to Game Center is optional; the game uses it to sign you in and to decide how ads are shown (see below).</p>
-  </div>
+<main>
+  <section class="card">
+    <h2>About the game</h2>
+    <p>Paint.io is a game about claiming ground. Leave your home turf, draw a loop and come back to paint everything inside it, but watch out: a rival who touches your trail cuts you off.</p>
+    <ul>
+      <li>Free to play, with ads. A one-time "Remove ads" purchase hides the banner.</li>
+      <li>Your progress can be saved to your own iCloud or Google Play Games account.</li>
+      <li>No account or login of ours: just open the game and play.</li>
+    </ul>
+  </section>
 
-  <div class="card">
-    <h2>Do I need an internet connection?</h2>
-    <p>Yes, to play a round. The menus, shop, missions and ranks all work offline, but Play needs a connection. If you see "No connection", check Wi-Fi or mobile data and tap Retry.</p>
-  </div>
+  <section class="card">
+    <h2>Privacy</h2>
+    <p>We keep our privacy policy short and plain: what the game stores, who receives data, and how to control it.</p>
+    <p><a class="btn" href="privacy.html">Read the privacy policy</a></p>
+  </section>
 
-  <div class="card">
-    <h2>How do ranks and seasons work?</h2>
-    <p>Every round earns Brushes for how you placed, your splats and wins, and Brushes carry you up seven tiers, from Charcoal to Grandmaster. From Watercolour up, a poor round can cost a few. A season lasts four weeks; at the end you're paid coins for the highest rank you reached and start the next season a tier lower.</p>
-  </div>
+  <section class="card">
+    <h2>Contact</h2>
+    <p>Questions, feedback or privacy requests: <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a></p>
+  </section>
+</main>
 
-  <div class="card">
-    <h2>My progress didn't come back on a new iPhone</h2>
-    <p>Check that you're signed in to iCloud with the same Apple Account on both phones, then open the game with an internet connection and give it a moment to sync. In the game's Settings you can see whether iCloud save is on and when it last synced.</p>
-  </div>
-
-  <div class="card">
-    <h2>How do I delete my data?</h2>
-    <p>Open Settings in the game and tap <strong>Delete my data</strong>. That erases your progress on this iPhone and in iCloud, ranks included.</p>
-  </div>
-
-  <div class="card">
-    <h2>Why are there ads?</h2>
-    <p>Ads keep the game free. They're shown in a small banner. Players under 13, and anyone not signed in to Game Center, only see non-personalised, kid-safe ads and are never asked about tracking. Players 13 and over are asked once whether to allow tracking, and can change that in the Settings app under Privacy &amp; Security › Tracking. See the <a href="privacy.html">privacy policy</a> for details.</p>
-  </div>
-
-  <div class="card">
-    <h2>How do I remove the ads?</h2>
-    <p>On the Home screen, tap the round <strong>AD</strong> button under the settings gear and buy <strong>Remove Ads</strong>. It's a one-time purchase. If you get a new iPhone or reinstall the game, open the same screen and tap <strong>Restore purchase</strong>.</p>
-  </div>
-
-  <div class="contact">
-    <strong>Contact us</strong><br>
-    Questions, bugs or ideas: <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a><br>
-    Please include your iPhone model and iOS version if you're reporting a problem.
-  </div>
-
-  <footer>
-    <a href="privacy.html">Privacy policy</a>
-    <span>© 2026 Gary Lam</span>
-  </footer>
-</main></div>
+<footer>
+  <p>&copy; 2026 Gary Lam &middot; <a href="privacy.html">Privacy policy</a></p>
+</footer>
 </body>
 </html>

@@ -3,134 +3,191 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paint.io — Privacy Policy</title>
-<meta name="description" content="How Paint.io handles your information.">
-<link rel="icon" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+<meta name="color-scheme" content="light dark">
+<title>Paint.io Privacy Policy</title>
+<meta name="description" content="How Paint.io handles data, who receives it and what you can do about it.">
 <style>
   :root {
-    --canvas: #f7f0e3; --card: #fffaf1; --ink: #2b2320; --muted: #6b5d52;
-    --wood: #8a5a34; --wood-dark: #6a4225;
-    --red: #e8453c; --blue: #2f7de1; --yellow: #f5b82e; --green: #3fae5a;
+    --bg: #f3f8ff;
+    --card: #ffffff;
+    --ink: #1c2748;
+    --muted: #55608a;
+    --brand: #2f7ff0;
+    --brand-deep: #1b4fb0;
+    --line: #d9e4f7;
+    --head: #e9f1ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1730;
+      --card: #16213f;
+      --ink: #eaf0ff;
+      --muted: #a9b6dc;
+      --brand: #6aa6ff;
+      --brand-deep: #8fbbff;
+      --line: #2a3a66;
+      --head: #1d2c52;
+    }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: var(--wood);
-    font: 17px/1.6 ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif;
+    margin: 0;
+    background: var(--bg);
     color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  .frame {
-    max-width: 760px; margin: 24px auto; padding: 14px;
-    background: linear-gradient(135deg, var(--wood) 0%, var(--wood-dark) 100%);
-    border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  header {
+    background: var(--brand-deep);
+    color: #fff;
+    padding: 18px 16px;
   }
-  .canvas {
-    background: var(--canvas); border-radius: 8px; padding: 36px 32px 28px;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(120,90,60,.05) 0 1px, transparent 1px 4px),
-      repeating-linear-gradient(90deg, rgba(120,90,60,.05) 0 1px, transparent 1px 4px);
+  header .bar {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
   }
-  header { display: flex; align-items: center; gap: 16px; }
-  header img { width: 56px; height: 56px; border-radius: 13px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
-  h1 { font-size: 1.9rem; margin: 0; }
-  .date { color: var(--muted); margin: 2px 0 0; }
-  .stripe { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin: 20px 0 22px; }
-  .stripe span { flex: 1; }
-  .summary { background: var(--card); border-left: 6px solid var(--green); border-radius: 10px; padding: 14px 20px; }
-  .summary ul { margin: 6px 0 0; padding-left: 20px; }
-  h2 { font-size: 1.2rem; margin: 30px 0 6px; }
-  a { color: var(--blue); }
-  footer { margin-top: 30px; font-size: .9rem; color: var(--muted); display: flex; gap: 16px; flex-wrap: wrap; }
-  @media (max-width: 520px) {
-    .frame { margin: 0; border-radius: 0; padding: 10px; }
-    .canvas { padding: 24px 18px 20px; }
-    h1 { font-size: 1.5rem; }
+  header a { color: #fff; text-decoration: none; font-weight: 700; }
+  header a:hover { text-decoration: underline; }
+  header .brand { font-size: 20px; letter-spacing: 0.2px; }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 56px;
+  }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 22px 28px;
+  }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; }
+  h2 { font-size: 21px; line-height: 1.3; margin: 32px 0 8px; color: var(--brand-deep); }
+  h3 { font-size: 18px; margin: 24px 0 6px; }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--brand); }
+  .date { color: var(--muted); margin: 0 0 18px; }
+  .scroll { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 16px; }
+  th, td { border: 1px solid var(--line); padding: 9px 11px; text-align: left; vertical-align: top; }
+  th { background: var(--head); }
+  footer { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; color: var(--muted); font-size: 15px; }
+  @media (max-width: 480px) {
+    article { padding: 18px 16px 22px; }
+    h1 { font-size: 26px; }
   }
 </style>
 </head>
 <body>
-<div class="frame"><main class="canvas">
-  <header>
-    <img src="icon.png" alt="Paint.io app icon">
-    <div>
-      <h1>Privacy Policy</h1>
-      <p class="date">Paint.io · Effective 30 September 2026</p>
-    </div>
-  </header>
-  <div class="stripe"><span style="background:var(--red)"></span><span style="background:var(--yellow)"></span><span style="background:var(--green)"></span><span style="background:var(--blue)"></span></div>
-
-  <div class="summary">
-    <strong>The short version</strong>
-    <ul>
-      <li>We don't have accounts or servers, and we don't collect your personal information.</li>
-      <li>Your progress is saved on your iPhone and in your own iCloud account.</li>
-      <li>Ads come from Google AdMob. Players under 13, and anyone not signed in to Game Center, only ever see non-personalised, kid-safe ads with no tracking. Players 13 and over are asked once whether to allow tracking; if they allow it, ads are personalised.</li>
-      <li>The game needs an internet connection to play a round; the menus work offline.</li>
-      <li>The one-time "Remove Ads" purchase is handled entirely by Apple. We never see your payment details.</li>
-      <li>You can delete your progress at any time from the game's Settings.</li>
-    </ul>
+<header>
+  <div class="bar">
+    <a class="brand" href="index.html">Paint.io</a>
+    <a href="index.html">Home</a>
   </div>
+</header>
 
-  <h2>Who we are</h2>
-  <p>Paint.io is made by Gary Lam, an independent developer ("we", "us"). You can reach us at <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a>.</p>
+<main>
+<article>
+<h1>Paint.io Privacy Policy</h1>
+<p class="date"><strong>Effective date:</strong> October 4, 2026</p>
 
-  <h2>Information the game keeps</h2>
-  <p>To remember your progress, the game stores your coins, equipment, settings, missions, play statistics (such as rounds played and territory painted), your rank progress (Brushes, rank and season) and the days you've watched an optional ad towards an unlock. This is stored:</p>
-  <ul>
-    <li><strong>On your iPhone</strong>, inside the app.</li>
-    <li><strong>In your iCloud account</strong>, if you're signed in to iCloud, so your progress follows you to other devices. This is kept by Apple in your own iCloud storage; we can't see or access it.</li>
-  </ul>
-  <p>We don't run servers, and none of this is sent to us.</p>
+<h2 id="s1">1. Who we are and what this policy covers</h2>
+<p>Paint.io (the "game") is a territory game for iPhone and Android, made by Gary Lam ("we", "us"). You can reach us at <strong><a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a></strong>; that email is our only contact point.</p>
+<p>This policy explains what the game stores, what leaves your device, who receives it and what you can do about it. The short version of how the game is built:</p>
+<ul>
+  <li>There is no account and no login of our own, and we run no server. The game's own code sends nothing to us.</li>
+  <li>There is no analytics tool, no crash-reporting tool, no attribution tool and no social feature. The rivals you play against are controlled by the computer.</li>
+  <li>The game shows ads from one company, Google AdMob, and Google's ad software collects data about your device while it does.</li>
+  <li>Your progress can be saved to your own iCloud or Google Play Games account, which we cannot read (<a href="#s4">section 4</a>).</li>
+</ul>
 
-  <h2>Game Center</h2>
-  <p>Signing in to Apple's Game Center is optional. The game uses it for two things: to sign you in, and to learn whether Apple considers your account to be under age, which decides how ads are shown (see Advertising). It doesn't send scores to Game Center. Game Center is run by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. You can manage it in your iPhone's Settings, under Game Center.</p>
+<h2 id="s2">2. Who receives data</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>Recipient</th><th>What</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Google AdMob</td><td>Ad data: your advertising ID and other device identifiers, IP address and approximate location, ad interactions, and device and app information</td><td>Showing and measuring ads</td></tr>
+    <tr><td>Apple (iPhone)</td><td>Your iCloud save; purchases; Game Center sign-in</td><td>Cloud save, Remove ads, choosing the right ads</td></tr>
+    <tr><td>Google Play (Android)</td><td>Play Games sign-in (your player name and ID); your Saved Game; purchases</td><td>Cloud save, Remove ads</td></tr>
+  </tbody>
+</table>
+</div>
+<p>We use no other ad network and no mediation partners. Others who take part in showing ads through Google's systems may also receive limited data, under Google's rules. We may disclose information if the law requires it.</p>
 
-  <h2>Ranks and rivals</h2>
-  <p>The rivals you play against, and the league you climb, are generated by the game on your iPhone. Nothing about your play is shared with other players, and no information about you leaves your device for this.</p>
+<h2 id="s3">3. Purchases</h2>
+<p>"Remove ads" is bought through Apple or Google. They handle payment, and we never see your payment details. The game keeps a local note on your device that the purchase succeeded. Apple or Google keep the purchase record, and you can restore it through their systems.</p>
 
-  <h2>Advertising</h2>
-  <p>The game shows ads from Google AdMob to keep it free: a banner during play, and optional video ads that you choose to watch, for example to unlock the Bamboo Brushmaster avatar. How ads are shown depends on your Game Center account:</p>
-  <ul>
-    <li><strong>Under 13, or not signed in to Game Center:</strong> every ad request is set as <strong>directed to children</strong> and as coming from a user under the age of consent. Ads are <strong>non-personalised</strong> (not based on your interests or behaviour) and limited to content suitable for all ages, and the game <strong>never asks to track you</strong> or uses your device's advertising identifier.</li>
-    <li><strong>13 and over, signed in to Game Center:</strong> the first time, iOS asks whether to allow Paint.io to track your activity across other companies' apps and websites. If you <strong>allow</strong> it, Google may use your device's advertising identifier to show ads chosen for you and to measure them. If you <strong>don't</strong>, ads are shown without it. You can change your answer at any time in the Settings app, under Privacy &amp; Security › Tracking.</li>
-  </ul>
-  <p>To show ads, measure them and prevent fraud, Google may receive limited technical information from your device, such as your IP address (which can indicate your approximate location), device type, operating system, how ads are viewed or tapped and, with your permission as above, your advertising identifier. Where the law requires it, Google may show a consent form before any ads load. Google handles this under its own policies: <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<h2 id="s4">4. Cloud save</h2>
+<ul>
+  <li><strong>iPhone:</strong> progress, including the device identifier, is stored in iCloud key-value storage under your Apple ID. It does not require Game Center.</li>
+  <li><strong>Android:</strong> when you are signed in to Google Play Games, a Saved Game with your progress is stored in your Google account. Sign-in can happen automatically for returning players; you can sign out in Play Games.</li>
+</ul>
+<p>These copies are held by Apple or Google under their own policies, and we cannot read them. Nothing syncs between iPhone and Android.</p>
 
-  <h2>In-app purchase</h2>
-  <p>You can buy "Remove Ads" once to turn off the banner. The purchase is made and processed by Apple through the App Store, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. We never receive your name, payment details or Apple Account. Apple only tells the game whether the purchase has been made, so it can hide the ads, and you can restore it on another device from the game's "Remove ads" screen.</p>
+<h2 id="s5">5. How long data is kept</h2>
+<div class="scroll">
+<table>
+  <thead><tr><th>Data</th><th>How long</th></tr></thead>
+  <tbody>
+    <tr><td>On your device</td><td>Until you use Delete my data (for progress) or uninstall the game</td></tr>
+    <tr><td>Cloud save</td><td>Until you delete it in your Apple or Google account; uninstalling does not remove it</td></tr>
+    <tr><td>Ad data held by Google</td><td>Under Google's own retention rules</td></tr>
+    <tr><td>Emails you send us</td><td>Only as long as needed to answer you and keep a record of your request</td></tr>
+    <tr><td>Other data held by us</td><td>None: we keep no copy of players' progress or ad data</td></tr>
+  </tbody>
+</table>
+</div>
 
-  <h2>Crash reports</h2>
-  <p>If you've chosen in your iPhone's settings to share analytics with app developers, Apple may send us anonymous crash reports and usage statistics. These don't identify you. We use them only to fix problems.</p>
+<h2 id="s6">6. Security</h2>
+<p>We do not run servers or keep player data, other than emails you send us. Progress sits in your phone's app storage and in your own iCloud or Google account, protected by Apple's and Google's systems. No system is perfectly secure, and the security of Google's ad data is Google's responsibility.</p>
 
-  <h2>Children</h2>
-  <p>We don't knowingly collect personal information from children. Players under 13, according to their Game Center account, and players who aren't signed in to Game Center, only ever see child-directed, non-personalised ads and are never asked about tracking, as described above. If you're a parent and have a question, contact us at the address above.</p>
+<h2 id="s7">7. Where data goes</h2>
+<p>We transfer no data ourselves. Google may process ad data in the United States and other countries, under its own safeguards. Apple and Google may do likewise with cloud saves.</p>
 
-  <h2>What we don't do</h2>
-  <ul>
-    <li>We don't sell or share your personal information.</li>
-    <li>We don't track you across other companies' apps or websites unless you're 13 or over and have allowed it in the tracking prompt; even then, that's done by Google for advertising, never by us.</li>
-    <li>We don't use analytics services in the game.</li>
-  </ul>
+<h2 id="s8">8. Your choices and rights</h2>
+<p><strong>In the game.</strong></p>
+<ul>
+  <li><strong>Settings &gt; Privacy and ads &gt; Delete my data</strong> resets your progress on this device and replaces your cloud save with an empty one (this needs a connection and takes effect when it syncs).</li>
+  <li>It does <strong>not</strong> clear the device identifier, the Remove ads note, your sound, vibration and minimap settings, or any choice you made in Google's form or Apple's tracking prompt. Those stay until you uninstall. It does <strong>not</strong> delete your Apple, Google or Play Games account, the purchase record, or data Google holds for ads.</li>
+  <li><strong>Settings &gt; Privacy and ads &gt; Change</strong> adjusts ad personalisation.</li>
+</ul>
+<p><strong>Elsewhere.</strong> To remove the saved game itself, use your iCloud storage settings or Play Games settings. To manage data Google holds for ads, use Google's own controls and, on iPhone, Apple's Tracking setting.</p>
+<p><strong>Access and correction.</strong> We hold no profile about you, so there is nothing for us to look up. You can email us for help or to make a request. We may need to point you to Apple or Google where they hold the data.</p>
 
-  <h2>Your choices</h2>
-  <ul>
-    <li><strong>Delete your progress:</strong> in the game, open Settings and tap <em>Delete my data</em>. This erases it from your iPhone and your iCloud account. It doesn't affect a "Remove Ads" purchase, which stays with your Apple Account.</li>
-    <li><strong>Tracking:</strong> change your answer in the Settings app, under Privacy &amp; Security › Tracking.</li>
-    <li><strong>Game Center:</strong> sign out or manage your data in the Settings app, under Game Center.</li>
-    <li><strong>iCloud:</strong> you can stop the game using iCloud in the Settings app, under your name › iCloud.</li>
-  </ul>
-  <p>Depending on where you live (for example in the EU, UK or California), you may have rights to access or delete information about you. Since we don't hold personal information, most requests are handled by the steps above, by Apple or by Google, but you're always welcome to contact us.</p>
+<h3 id="s8-us">US state privacy rights</h3>
+<p>Some US states' laws treat personalised ads as "targeted advertising", "sharing" or "sale" of personal information. Personalised ads (on iPhone if you choose Allow tracking; on Android by default) may count as that, so these rights apply to you if you live in such a state:</p>
+<ul>
+  <li><strong>Categories made available to Google AdMob:</strong> identifiers (advertising ID, device identifiers, IP address); internet or other network activity (ad interactions, device and app information); approximate geolocation.</li>
+  <li><strong>Purposes:</strong> showing and measuring ads and preventing fraud.</li>
+  <li><strong>Sensitive data:</strong> we collect none.</li>
+  <li><strong>Under-16s:</strong> we do not knowingly sell or share data of anyone under 16.</li>
+  <li><strong>Your rights:</strong> to know what we hold, to delete, to correct, to opt out of targeted advertising, sharing or sale, and not to be treated worse for using these rights.</li>
+  <li><strong>How to use them (including "Do Not Sell or Share My Personal Information"):</strong> switch off personalisation (<strong>Change</strong>, or "Ask App Not to Track" on iPhone), use <strong>Delete my data</strong>, or email us. Where AdMob offers a US-states message, it gives a further opt-out.</li>
+  <li><strong>Appeal:</strong> if we decline a request, reply to our email to ask for a review, and you may then contact your state's attorney general.</li>
+  <li><strong>Agents:</strong> an authorised agent may write on your behalf; we may ask for proof.</li>
+  <li><strong>Opt-out signals:</strong> the game does not receive Global Privacy Control signals, so use the controls above.</li>
+</ul>
 
-  <h2>Changes to this policy</h2>
-  <p>If we change this policy, we'll update it on this page and change the date at the top.</p>
+<h2 id="s9">9. Children</h2>
+<p>Paint.io is for people <strong>16 and older</strong>. It is not directed at, or intended for, anyone under 16, and we do not knowingly collect or solicit personal information from anyone under 16 or knowingly allow them to use our products. If you are under 16, you should not use our products or send us information about yourself, such as your name, address, telephone number or email address. If we learn that we have collected personal information from someone under 16, we will delete it. Parents and guardians can email <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a> and we will help (<a href="#s8">section 8</a>).</p>
+<p>The game does not ask for your age or birthday. Its only age signal is Apple's Game Center child flag. It cannot detect a child's age in any other way, so it is <strong>not a substitute for parental controls</strong>. If a child may have access to your device, we recommend Family Link on Android, Screen Time and Game Center child accounts on iPhone.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about privacy: <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a></p>
+<h2 id="s10">10. Where the game is offered</h2>
+<p>Paint.io is not offered in the European Union, the European Economic Area, the United Kingdom or Switzerland. If you are in one of those places, please do not use it.</p>
 
-  <footer>
-    <a href="index.html">Support</a>
-    <span>© 2026 Gary Lam</span>
-  </footer>
-</main></div>
+<h2 id="s11">11. Changes to this policy</h2>
+<p>We may update this policy when the game or the law changes. The effective date at the top shows the current text. For material changes we will also tell you in the game.</p>
+</article>
+</main>
+
+<footer>
+  <p>&copy; 2026 Gary Lam &middot; <a href="index.html">Paint.io home</a> &middot; <a href="mailto:paintio1034@gmail.com">paintio1034@gmail.com</a></p>
+</footer>
 </body>
 </html>
